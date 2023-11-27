@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const secretKey = 'KLVKMdsrihfb20024e#fga.gdadggs';
-const { getDriveData } = require('../../monkeybox/middleware/driveFunctions')
+const { getDriveData } = require('../middleware/driveFunctions')
 const { ObjectId } = require('mongodb')
 
 module.exports = async (req, res, db) => {
