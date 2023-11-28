@@ -8,6 +8,12 @@ const app = express();
 const PORT = 3000;
 const MONGO_URL = 'mongodb+srv://root:hq4TbQ1NwYY3PRxF@priyanshupersonal.q9jelbo.mongodb.net/monkeybox?retryWrites=true&w=majority';
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://heroic-fudge-92228c.netlify.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 // Connecting to MongoDB
 MongoClient.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
