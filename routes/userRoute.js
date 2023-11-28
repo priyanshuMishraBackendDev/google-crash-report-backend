@@ -5,6 +5,6 @@ const userController = require('../controllers/user');
 const router = express.Router();
 
 module.exports = (db) => {
-  router.post('/signUp', signUpValidate, (req, res) => userController(req, res, db));
+  router.post('/signUp', (req, res) => userController(req, res, db));
   return router;
 };
